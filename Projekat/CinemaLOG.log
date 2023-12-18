@@ -1,0 +1,8 @@
+[2023-06-21T21:11:34.988520+00:00] cinema.INFO: User 1 successfully loged in [] []
+[2023-06-21T21:15:18.956482+00:00] cinema.INFO: User loged out [] []
+[2023-06-21T21:15:43.813177+00:00] cinema.INFO: User 1 successfully loged in [] []
+[2023-06-21T21:15:54.299867+00:00] cinema.INFO: Customer  successfully added new comment [] []
+[2023-06-21T21:16:08.760464+00:00] cinema.WARNING: Customer tried buy ticket for movie (ID:1) but he already buy it [] []
+[2023-06-21T21:16:20.341051+00:00] cinema.INFO: Customer buy ticket for movie (ID:2) [] []
+[2023-06-21T21:16:25.011655+00:00] cinema.INFO: Customer canceled reservation: 2 [] []
+[2023-06-21T21:16:48.985725+00:00] cinema.INFO: User loged out [] []

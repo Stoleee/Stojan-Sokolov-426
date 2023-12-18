@@ -1,0 +1,43 @@
+{% extends 'layout.twig' %}
+{% block title %}
+	Manage Comments  
+{% endblock %}
+{% block content %}
+	<div class="container">
+        <div class="row">
+            <h1 class="text-center w-100" style="color:white;"> Comments </h1>
+        </div>
+        
+			
+
+
+			{% for comment in comments %}
+
+			<div class="row justify-content-center" style="margin-top:1rem;">
+				<div class="col-sm-12">
+					<div class="card text-white bg-dark ">
+						<div class="card-header  ">
+						<p style="margin:0">{{comment.customer.name}} : {{comment.comment}} </p>
+						<p style="margin:0">{{comment.created}} </p>
+						</div>
+						<div class="row   justify-content-center" style="height:10%" >
+							<form method="post"  >
+								<input type="hidden" name="commentId" value={{comment.id}}>
+								<input class="btn btn-danger w-30 d-block" type="submit"  value="Remove Comment">
+							</form>
+						</div>
+						
+					</div>
+
+					
+				</div>
+			</div>
+			
+			{% endfor %}
+			
+
+ 
+    </div>
+
+
+{% endblock %}

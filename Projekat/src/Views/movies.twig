@@ -1,0 +1,89 @@
+{% extends 'layout.twig' %}
+{% block title %}
+	Movies 
+{% endblock %}
+{% block content %}
+
+<div class="container">   
+    <div class="row" style="margin-top:2rem;">
+            <h1 class="text-center w-100" style="color:white;"> Movies</h1>
+    </div>
+
+	<div class="row justify-content-center">
+			<div class="col-sm-6">
+				<form method="post" >
+					<input type="text" class="form-control" name="search"  placeholder="search">
+					<div class="row justify-content-center" style="margin-top:2rem;">
+						<input type="submit"   class="btn btn-secondary my-2 my-sm-0 w-25 " style="color:white" value="Search">
+					</div>
+				</form>
+			</div>
+    </div>
+		<br><br> 
+	
+    
+		<div class="row" style="margin-top:2rem;"> 
+		{% for movie in movies %}
+				<div class="col-sm-6" style="margin-bottom:2rem;">
+					<div class="card text-white bg-dark" style="height:100%" >
+						<div class="card-header h3 text-center">
+						{{movie.title}}
+						</div>
+						
+						<div class="card-body ">
+						<div class="row justify-content-center">
+						<img   src="Images/{{movie.picture}}" style="height:450px">
+					   </div>
+						<div class="w-100">
+								<p class="card-text text-center w-100  p-3 m-0" style="height:70%" >{{movie.content}} </p>
+								<div class="row d-flex p-3" style="height:10%">
+									<p class="card-text text-left text-muted w-50 pl-4 h4">{{movie.genre}}</p>
+									<p class="card-text text-right text-muted w-50 pr-4 h4">{{movie.duration}}</p>
+							</div>
+								{% if userType == "customer" %}
+								
+								<div class="row  p-3 m-2 justify-content-center" style="height:10%;" >
+									<a  href="/buyTicket?movieId={{movie.id}}" class="btn btn-primary " style="color:white">Buy Ticket</a>
+								</div>
+								
+								
+								{% endif %}
+								{% if userType is not defined %}
+								
+								<div class="row  p-3 m-2 justify-content-center" style="height:10%;" >
+								<p style="color:red;font-size:22px;">												
+								Register by clicking <a  href="/register" style="text-decoration: none;"> here </a> to reserve a ticket
+								</p>
+								</div>
+								
+								
+								{% endif %}
+								 {% for comment in movie.comments %}
+
+							<div class="row" style="margin-top:1rem;">
+								<div class="col-sm-12">
+									<div class="card text-black bg-dark ">
+									<div class="card-header  ">
+									<p style="margin:0">{{comment.customer.name}} : {{comment.comment}} </p>
+									<p style="margin:0">{{comment.created}} </p>
+								</div>
+							</div>
+						</div>
+					</div>
+			
+							{% endfor %} 
+								{% if userType == "customer" %}
+								<div class="row  p-3 m-2 justify-content-center" style="height:10%" >
+								<a  href="/allComments?movieId={{movie.id}}" class="btn btn-success " style="color:white">See all comments</a>
+								</div>
+								{% endif %}
+							</div>	
+						</div>
+					</div>
+		   	       </div>
+		{% endfor %}
+    </div>
+ 	</div>   
+
+
+{% endblock %}

@@ -1,0 +1,25 @@
+{
+    "name": "stojansokolov/cinema",
+    "description": "Web aplication for cinema",
+    "minimum-stability": "stable",
+    "license": "Apache-2.0",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Stojan Sokolov",
+            "email": "stojan.sokolov@pmf.edu.rs"
+        }
+    ],
+    "require": {
+    
+    "twig/twig": "^3.3",
+    "mpdf/mpdf": "^8.1",
+    "monolog/monolog": "^2.8"
+
+    },
+    "autoload": {
+        "psr-4": {
+        "Cinema\\": "src"
+        }
+    }
+}

@@ -1,0 +1,27 @@
+{% extends 'layout.twig' %}
+{% block title %}
+	Manager Profile
+{% endblock %}
+{% block content %}
+	<div class="container ">
+
+		<div class="row justify-content-center" style="margin-top:1rem;">
+			<h1 class="col6" style="color:white;"> My Profile</h1>
+		</div>
+
+		<div class="row justify-content-center" style="margin-top:1rem;">
+			<div class="col-sm-6">
+				<div class="card text-white bg-dark">
+					<div class="card-header">Your Profile</div>
+					<div class="card-body">
+						<h5 class="card-title text-center">Name:</h5>
+						<p class="card-text text-center">{{manager.name}}</p>
+						<h5 class="card-title text-center">Surname:</h5>
+						<p class="card-text text-center">{{manager.surname}}</p>
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endblock %}

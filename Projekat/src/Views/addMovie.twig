@@ -1,0 +1,67 @@
+
+{% extends 'layout.twig' %}
+{% block title %}
+	Add Movie
+{% endblock %}
+{% block content %}
+	<div class="container " style="margin-top:2rem;">
+			<div class=" d-flex justify-content-center " >
+				<div class="col-md-6">
+				<div class="card text-white bg-dark">
+					<h3 class="card-header" style="color:white;">Add Movie</h3>
+					<div class="card-body ">
+					<form method='post'>
+						<div class="form-group">
+							<label for="exampleInputEmail1">Title</label>
+							<input type="text" class="form-control" name="title"  placeholder="Mad Max">
+						</div>
+
+						<div class="form-group">
+							<label for="exampleInputEmail1">Picture src</label>
+							<input type="text" class="form-control" name="picture"  placeholder="image.png">
+						</div>
+
+						<div class="form-group">
+							<label for="exampleInputEmail1">Duration</label>
+							<input type="text" class="form-control" name="duration"  placeholder="123 min">
+						</div>
+
+						<div class="form-group">
+							<label for="exampleInputEmail1">Genre</label>
+							<input type="text" class="form-control" name="genre"  placeholder="akcija">
+						</div>
+						<div class="form-group">
+							<label for="exampleInputEmail1">Date</label>
+							<input type="date" class="form-control" name="date" >
+						</div>
+						<div class="form-group">
+							<label for="exampleInputEmail1">Price</label>
+							<input type="number" class="form-control" name="price"  placeholder="200">
+						</div>
+						<div class="form-group">
+							<label for="exampleFormControlTextarea1">Content</label>
+							<textarea class="form-control" name="content" rows="3" placeholder="A lunatic called Night Rider breaks loose in a stolen cop car and leads several futuristic law enforcement agents on a high-speed wild goose chase. His eventual death brings a much larger gang of sadistic followers to town, where they wreak havoc and pose a threat to Max (Mel Gibson) and his colleague Goose (Steve Bisley)"></textarea>
+						</div>
+						<div class="form-group">
+							<label for="exampleInputEmail1">Number of tickets</label>
+							<input type="number" class="form-control" name="maxTickets"  placeholder="50">
+						</div>
+						
+
+                       <div class="d-flex justify-content-center ">
+						<button type="submit" class="btn btn-primary">Add movie</button>
+						</div>
+					</form>
+
+					<p>{{ errorMsg }}</p>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+        
+{% endblock %}

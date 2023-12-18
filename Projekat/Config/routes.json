@@ -1,0 +1,93 @@
+{
+    "":{
+        "controller":"MainPage",
+        "method": "home"
+    },
+
+    "movies":{
+        "controller":"Movies",
+        "method": "all"
+    },
+  
+    "login": {
+        "controller": "User",
+        "method": "login"
+        },
+    
+    "register": {
+        "controller": "Customer",
+        "method": "register"
+        },
+    
+    "logout": {
+        "controller": "User",
+        "method": "logout"
+        },
+    "customer": {
+        "controller": "Customer",
+        "method": "get",
+        "login": "customer"
+        },
+    "buyTicket": {
+        "controller": "Movies",
+        "method": "buyTicket",
+        "login": "customer"
+        },
+    "myTickets": {
+        "controller": "ReservedTickets",
+        "method": "customerTickets",
+        "login": "customer"
+        },
+    
+    "allComments": {
+        "controller": "Comment",
+        "method": "getByMovie",
+        "login": "customer"
+        },
+    "manager": {
+        "controller": "Manager",
+        "method": "get",
+        "login": "manager"
+        },
+    "manageComments": {
+        "controller": "Comment",
+        "method": "manage",
+        "login": "manager"
+        },
+    "addMovie": {
+        "controller": "Movies",
+        "method": "add",
+        "login": "manager"
+        },
+    "admin": {
+        "controller": "Admin",
+        "method": "get",
+        "login": "admin"
+        }
+    ,
+
+    "addAdmin": {
+   "controller": "Admin",
+   "method": "add",
+   "login": "admin"
+   },
+
+    "addManager": {
+   "controller": "Manager",
+   "method": "add",
+   "login": "admin"
+   },
+
+   "export" : {
+   "controller":"Admin",
+   "method":"export",
+   "login":"admin"
+  },
+
+  "exportReservations" : {
+    "controller":"Admin",
+    "method":"exportReservations",
+    "login":"admin"
+   }
+
+}

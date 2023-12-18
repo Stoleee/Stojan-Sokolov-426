@@ -1,0 +1,51 @@
+{% extends 'layout.twig' %}
+{% block title %}
+	Movies 
+{% endblock %}
+{% block content %}
+	<div class="container">
+        <div class="row">
+            <h1 class="text-center w-100" style="margin-top:2rem;color:white;"> My Tickets</h1>
+        </div>
+         {% for ticket in tickets %}
+			<div class="row justify-content-center" style="margin-top:3rem;">
+				<div class="col-sm-12">
+					<div class="card text-white bg-dark">
+						<div class="card-header h3 text-center">{{ticket.movie.title}} </div>
+						<div class="card-body d-flex">
+							<img class="w-25" src="Images/{{ticket.movie.picture}}">
+							<div class="w-75">
+								<div class="row d-block p-3" style="height:80%">
+									<h5 class="card-title text-center">Duration:</h5>
+                                    <p class="card-text text-center">{{ticket.movie.duration}}</p>
+
+                                    <h5 class="card-title text-center">Genre:</h5>
+                                    <p class="card-text text-center">{{ticket.movie.genre}}</p>
+
+                                    <h5 class="card-title text-center">Date:</h5>
+                                    <p class="card-text text-center">{{ticket.movie.date}}</p>
+
+                                    <h5 class="card-title text-center">Price:</h5>
+                                    <p class="card-text text-center">{{ticket.movie.price}}</p>
+									
+								</div>
+								<div class="row  p-3 m-2 justify-content-center" style="height:10%" >
+									<form method="post">
+									<input type="hidden" name="ticketId" value={{ticket.id}}>
+									<input class="btn btn-danger" type="submit"  value="Cancel Reservation">
+									</form>
+								</div>
+								
+							</div>
+							
+						</div>
+					</div>
+				</div>
+			</div>
+		{% endfor %}
+         
+ 
+    </div>
+
+
+{% endblock %}

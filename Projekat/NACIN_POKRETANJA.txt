@@ -1,0 +1,34 @@
+
+
+1. Kreirati bazu pod imenom "cinema".
+
+2. Kopirati sadrzaj fajla "database.sql", u njemu se nalaze upiti za kreiranje svih  tabela i inserti za svaku tabelu i tako popuniti bazu.
+   -u bazi imamo uneta 5 filma
+   -imamo uneta tri usera:
+Prvi user jeste customer, njegovi podaci za logovanje su sledeci:
+    email: customer@gmail.com
+    sifra:12345
+Drugi user jeste manager, njegovi podaci za logovanje su sledeci:
+    email: manager@gmail.com
+    sifra:12345
+Treci user jeste admin, njegovi podaci za logovanje su sledeci:
+    email: admin@gmail.com
+    sifra:12345
+
+Takodje u bazi sam uneo i jedan komentar i jednu rezervaciju.
+
+
+3. GUEST DEO 
+Ukoliko nemamo nalog na sajtu, mozemo samo videti koji su filmovi dostupni, ali dok ne napravimo nalog i 
+dok se ne ulogujemo ne mozemo rezervisati kartu, imamo uvid u odredjeni broj kometara za svaki film
+
+
+4. Customer moze da rezervise kartu za neki film, da otkaze rezervaciju i ostavi svoj komentar i on ima uvid u sve komentare.
+
+5. Manager moze da brise komentare i da dodaje novi film.
+
+6. Admin moze da dodaje novog menagera, da dodaje novog admina, da exportuje listu filmova iz baze i da exportuje sve rezervacije.
+
+
+
+

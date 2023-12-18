@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+		<link rel="stylesheet" href="style.css">
+		<title>
+			{% block title %}{% endblock %}
+		</title>
+	</head>
+	<style>
+	body{
+		background-color:#A9A9A9;
+		background-image: url("../Images/Cinema.png") !important;
+		
+	}
+	li, .cin{
+		font-size:20px;
+	}
+	
+
+	</style>
+	<body>
+		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+			<b><a class="navbar-brand cin" href="/" style="color:gray;">CINEMA</a></b>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarNavDropdown">
+				<ul class="navbar-nav me-auto">
+					<li class="nav-item ">
+						<a class="nav-link" href="/movies">Movies</a>
+					</li>
+					{% if userType is not defined %}
+					<li class="nav-item">
+						<a class="nav-link me-sm-2" href="/login" >Login</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/register">Register</a>
+					</li>
+					{% endif %}
+
+					{% if userType == "customer" %}
+					
+					<li class="nav-item">
+						<a class="nav-link" href="/customer">My profile</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="/myTickets">My tickets</a>
+					</li>
+
+					{% endif %}
+
+					{% if userType == "manager" %}
+					
+					<li class="nav-item">
+						<a class="nav-link" href="/manager">My profile</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="/manageComments">Manage comments</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="/addMovie">Add new movie</a>
+					</li>
+
+					{% endif %}
+
+					{% if userType == "admin" %}
+					
+					<li class="nav-item">
+						<a class="nav-link" href="/admin">My profile</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="/addManager">Add new manager</a>
+					</li>
+
+					<li class="nav-item">
+						<a class="nav-link" href="/addAdmin">Add new admin</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/export">Export movies</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="/exportReservations">Export reservations</a>
+					</li>
+					{% endif %}
+
+					
+					{% if userType is  defined %}
+					<li class="nav-item">
+						<a class="nav-link" href="/logout">Logout</a>
+					</li>
+
+					
+					{% endif %}
+					
+				</ul>
+			</div>
+		</nav>
+		{% block content %}{% endblock %}
+
+	
+<div></div>
+<footer class=" footer  text-center text-lg-start bg-dark text-muted fixed-bottom" style="margin-top:4rem">
+	<div class="text-center p-4" >
+		© 2023 Copyright
+	</div>
+</footer>
+		<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	</body>
+</html>

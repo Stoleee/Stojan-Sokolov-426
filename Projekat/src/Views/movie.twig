@@ -1,0 +1,55 @@
+{% extends 'layout.twig' %}
+{% block title %}
+	{{movie.title}}
+{% endblock %}
+{% block content %}
+	<div class="container ">
+
+		<div class="row justify-content-center" style="margin-top:1rem;">
+			<h1 class="col6" style="color:white;"> Buy ticket for movie:</h1>
+		</div>
+
+		<h1 style="color:red; text-align:center">{{errorMsg}} </h1>
+
+		<div class="row justify-content-center" style="margin-top:1rem;">
+			<div class="col-sm-6">
+				<div class="card text-white bg-dark">
+					<h3 class="card-header text-center">{{movie.title}}</h3>
+					<div class="row justify-content-center">
+						<img class="card-img-top" style="height: 450px ; width:280px; margin-top:2rem;" src="Images/{{movie.picture}}" alt="Card image cap">
+					</div>
+					
+					<div class="card-body">
+					
+						<!--<h5 class="card-title text-center">Name:</h5>-->
+						<p class="card-text text-center">{{movie.content}}</p>
+
+						<h5 class="card-title text-center">Duration:</h5>
+						<p class="card-text text-center">{{movie.duration}}</p>
+
+						<h5 class="card-title text-center">Genre:</h5>
+						<p class="card-text text-center">{{movie.genre}}</p>
+
+						<h5 class="card-title text-center">Date:</h5>
+						<p class="card-text text-center">{{movie.date}}</p>
+
+						<h5 class="card-title text-center">Price:</h5>
+						<p class="card-text text-center">{{movie.price}}</p>
+
+						<h5 class="card-title text-center">Tickets:</h5>
+						<p class="card-text text-center">{{ticketLeft}}</p>
+
+
+						<div class="row  p-3 m-2 justify-content-center" style="height:10%" >
+						<form method="post">
+							<input type="submit"   class="btn btn-primary " style="color:white" value="Buy Ticket">
+						</form>
+						</div>
+						
+						
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	{% endblock %}
